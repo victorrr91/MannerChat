@@ -1,0 +1,59 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ce0fb463a8f95fc8363c99fab1ea197553af5dfe"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "branch" : "master",
+        "revision" : "415b1d97fb38bda1e5a6b2dde63354720832110b"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "91a36920b1ec069004fef9dc41b7c5dbcaa5fffe"
+      }
+    },
+    {
+      "identity" : "sendbird-chat-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sendbird/sendbird-chat-sdk-ios",
+      "state" : {
+        "revision" : "b8ef870060dcf513d58b19f35739db6267dd7f43",
+        "version" : "4.3.0"
+      }
+    },
+    {
+      "identity" : "sendbird-uikit-ios-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sendbird/sendbird-uikit-ios-spm",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a0c6aae1eac9f11f2c802965b44e893280c889d7"
+      }
+    },
+    {
+      "identity" : "takuuid",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/taka0125/TAKUUID.git",
+      "state" : {
+        "revision" : "5eab7cd648fc4f6dc5844438fed8eaafb0e48063",
+        "version" : "1.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

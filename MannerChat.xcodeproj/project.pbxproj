@@ -7,23 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1B70A3A29A2824A00E18524 /* MyChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B70A3929A2824A00E18524 /* MyChatViewCell.swift */; };
+		B1B70A3C29A2825200E18524 /* OtherChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B70A3B29A2825200E18524 /* OtherChatViewCell.swift */; };
+		B1B747C0299F27C8000C982B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B1B747BF299F27C8000C982B /* Kingfisher */; };
 		B1B8892A2998DC8B007EA100 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889292998DC8B007EA100 /* AppDelegate.swift */; };
 		B1B8892C2998DC8B007EA100 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8892B2998DC8B007EA100 /* SceneDelegate.swift */; };
-		B1B8892E2998DC8B007EA100 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8892D2998DC8B007EA100 /* ViewController.swift */; };
-		B1B889312998DC8B007EA100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B8892F2998DC8B007EA100 /* Main.storyboard */; };
 		B1B889332998DC8D007EA100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B889322998DC8D007EA100 /* Assets.xcassets */; };
 		B1B889362998DC8D007EA100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B889342998DC8D007EA100 /* LaunchScreen.storyboard */; };
+		B1B8893F2998DCAF007EA100 /* SendbirdUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1B8893E2998DCAF007EA100 /* SendbirdUIKit */; };
+		B1B889412998E0F8007EA100 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889402998E0F8007EA100 /* OnboardingViewController.swift */; };
+		B1B889432998E16B007EA100 /* OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889422998E16B007EA100 /* OnboardingViewCell.swift */; };
+		B1B889452998E185007EA100 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889442998E185007EA100 /* OnboardingModel.swift */; };
+		B1B889472998E196007EA100 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889462998E196007EA100 /* OnboardingViewModel.swift */; };
+		B1B8894A2998E1DA007EA100 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B889492998E1DA007EA100 /* UIColor+.swift */; };
+		B1B889502998E2A1007EA100 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1B8894C2998E2A0007EA100 /* NanumGothic.otf */; };
+		B1B889512998E2A1007EA100 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1B8894D2998E2A1007EA100 /* NanumGothicBold.otf */; };
+		B1B889522998E2A1007EA100 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1B8894E2998E2A1007EA100 /* NanumGothicLight.otf */; };
+		B1B889532998E2A1007EA100 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1B8894F2998E2A1007EA100 /* NanumGothicExtraBold.otf */; };
+		B1B8895529990B27007EA100 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8895429990B27007EA100 /* UITextField.swift */; };
+		B1BA2AB6299DE44500559A4D /* API+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2AB5299DE44500559A4D /* API+.swift */; };
+		B1BA2AB8299DEBBA00559A4D /* UUID+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2AB7299DEBBA00559A4D /* UUID+.swift */; };
+		B1BA2ABA299DF4DD00559A4D /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2AB9299DF4DD00559A4D /* ChatAPI.swift */; };
+		B1BA2ABC299E30F300559A4D /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2ABB299E30F300559A4D /* UserResponseModel.swift */; };
+		B1BA2ABE299E582B00559A4D /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2ABD299E582B00559A4D /* UIButton+.swift */; };
+		B1BA2AC1299E7EF300559A4D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B1BA2AC0299E7EF300559A4D /* RxCocoa */; };
+		B1BA2AC3299E7EF300559A4D /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = B1BA2AC2299E7EF300559A4D /* RxRelay */; };
+		B1BA2AC5299E7EF300559A4D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1BA2AC4299E7EF300559A4D /* RxSwift */; };
+		B1BA2AC9299E96A500559A4D /* OpenChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2AC8299E96A500559A4D /* OpenChatViewController.swift */; };
+		B1BA2ACB299EA4FD00559A4D /* ChannelResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2ACA299EA4FD00559A4D /* ChannelResponseModel.swift */; };
+		B1BA2ACD299EBD4900559A4D /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BA2ACC299EBD4900559A4D /* Date+.swift */; };
+		B1BFD332299D607000CA9B98 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1BFD331299D607000CA9B98 /* Alamofire */; };
+		B1BFD335299D619D00CA9B98 /* TAKUUID in Frameworks */ = {isa = PBXBuildFile; productRef = B1BFD334299D619D00CA9B98 /* TAKUUID */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B1B70A3929A2824A00E18524 /* MyChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatViewCell.swift; sourceTree = "<group>"; };
+		B1B70A3B29A2825200E18524 /* OtherChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatViewCell.swift; sourceTree = "<group>"; };
 		B1B889262998DC8B007EA100 /* MannerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MannerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B889292998DC8B007EA100 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1B8892B2998DC8B007EA100 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B1B8892D2998DC8B007EA100 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B1B889302998DC8B007EA100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1B889322998DC8D007EA100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1B889352998DC8D007EA100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1B889372998DC8D007EA100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1B889402998E0F8007EA100 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B1B889422998E16B007EA100 /* OnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewCell.swift; sourceTree = "<group>"; };
+		B1B889442998E185007EA100 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		B1B889462998E196007EA100 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		B1B889492998E1DA007EA100 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		B1B8894C2998E2A0007EA100 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.otf; sourceTree = "<group>"; };
+		B1B8894D2998E2A1007EA100 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.otf; sourceTree = "<group>"; };
+		B1B8894E2998E2A1007EA100 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicLight.otf; sourceTree = "<group>"; };
+		B1B8894F2998E2A1007EA100 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		B1B8895429990B27007EA100 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		B1BA2AB3299DDE7B00559A4D /* MannerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MannerChat.entitlements; sourceTree = "<group>"; };
+		B1BA2AB4299DE3F900559A4D /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
+		B1BA2AB5299DE44500559A4D /* API+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+.swift"; sourceTree = "<group>"; };
+		B1BA2AB7299DEBBA00559A4D /* UUID+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+.swift"; sourceTree = "<group>"; };
+		B1BA2AB9299DF4DD00559A4D /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
+		B1BA2ABB299E30F300559A4D /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
+		B1BA2ABD299E582B00559A4D /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		B1BA2AC8299E96A500559A4D /* OpenChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
+		B1BA2ACA299EA4FD00559A4D /* ChannelResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelResponseModel.swift; sourceTree = "<group>"; };
+		B1BA2ACC299EBD4900559A4D /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +76,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1BA2AC5299E7EF300559A4D /* RxSwift in Frameworks */,
+				B1BA2AC3299E7EF300559A4D /* RxRelay in Frameworks */,
+				B1B747C0299F27C8000C982B /* Kingfisher in Frameworks */,
+				B1BFD335299D619D00CA9B98 /* TAKUUID in Frameworks */,
+				B1B8893F2998DCAF007EA100 /* SendbirdUIKit in Frameworks */,
+				B1BA2AC1299E7EF300559A4D /* RxCocoa in Frameworks */,
+				B1BFD332299D607000CA9B98 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +108,83 @@
 		B1B889282998DC8B007EA100 /* MannerChat */ = {
 			isa = PBXGroup;
 			children = (
+				B1BA2AB3299DDE7B00559A4D /* MannerChat.entitlements */,
 				B1B889292998DC8B007EA100 /* AppDelegate.swift */,
 				B1B8892B2998DC8B007EA100 /* SceneDelegate.swift */,
-				B1B8892D2998DC8B007EA100 /* ViewController.swift */,
-				B1B8892F2998DC8B007EA100 /* Main.storyboard */,
+				B1BA2AC6299E961000559A4D /* Onboarding */,
+				B1BA2AC7299E966F00559A4D /* OpenChat */,
+				B1BFD32F299D5EE200CA9B98 /* Models */,
+				B1BFD32E299D5ED400CA9B98 /* API */,
+				B1B889482998E1CA007EA100 /* Extensions */,
+				B1B8894B2998E28C007EA100 /* Fonts */,
 				B1B889322998DC8D007EA100 /* Assets.xcassets */,
+				B1BA2AB4299DE3F900559A4D /* env.xcconfig */,
 				B1B889342998DC8D007EA100 /* LaunchScreen.storyboard */,
 				B1B889372998DC8D007EA100 /* Info.plist */,
 			);
 			path = MannerChat;
+			sourceTree = "<group>";
+		};
+		B1B889482998E1CA007EA100 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B1B889492998E1DA007EA100 /* UIColor+.swift */,
+				B1BA2ACC299EBD4900559A4D /* Date+.swift */,
+				B1B8895429990B27007EA100 /* UITextField.swift */,
+				B1BA2AB5299DE44500559A4D /* API+.swift */,
+				B1BA2AB7299DEBBA00559A4D /* UUID+.swift */,
+				B1BA2ABD299E582B00559A4D /* UIButton+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1B8894B2998E28C007EA100 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B1B8894C2998E2A0007EA100 /* NanumGothic.otf */,
+				B1B8894D2998E2A1007EA100 /* NanumGothicBold.otf */,
+				B1B8894F2998E2A1007EA100 /* NanumGothicExtraBold.otf */,
+				B1B8894E2998E2A1007EA100 /* NanumGothicLight.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B1BA2AC6299E961000559A4D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B1B889402998E0F8007EA100 /* OnboardingViewController.swift */,
+				B1B889422998E16B007EA100 /* OnboardingViewCell.swift */,
+				B1B889462998E196007EA100 /* OnboardingViewModel.swift */,
+				B1B889442998E185007EA100 /* OnboardingModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B1BA2AC7299E966F00559A4D /* OpenChat */ = {
+			isa = PBXGroup;
+			children = (
+				B1BA2AC8299E96A500559A4D /* OpenChatViewController.swift */,
+				B1B70A3929A2824A00E18524 /* MyChatViewCell.swift */,
+				B1B70A3B29A2825200E18524 /* OtherChatViewCell.swift */,
+			);
+			path = OpenChat;
+			sourceTree = "<group>";
+		};
+		B1BFD32E299D5ED400CA9B98 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B1BA2AB9299DF4DD00559A4D /* ChatAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B1BFD32F299D5EE200CA9B98 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1BA2ABB299E30F300559A4D /* UserResponseModel.swift */,
+				B1BA2ACA299EA4FD00559A4D /* ChannelResponseModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +203,15 @@
 			dependencies = (
 			);
 			name = MannerChat;
+			packageProductDependencies = (
+				B1B8893E2998DCAF007EA100 /* SendbirdUIKit */,
+				B1BFD331299D607000CA9B98 /* Alamofire */,
+				B1BFD334299D619D00CA9B98 /* TAKUUID */,
+				B1BA2AC0299E7EF300559A4D /* RxCocoa */,
+				B1BA2AC2299E7EF300559A4D /* RxRelay */,
+				B1BA2AC4299E7EF300559A4D /* RxSwift */,
+				B1B747BF299F27C8000C982B /* Kingfisher */,
+			);
 			productName = MannerChat;
 			productReference = B1B889262998DC8B007EA100 /* MannerChat.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +240,13 @@
 				Base,
 			);
 			mainGroup = B1B8891D2998DC8B007EA100;
+			packageReferences = (
+				B1B8893D2998DCAF007EA100 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */,
+				B1BFD330299D607000CA9B98 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B1BFD333299D619D00CA9B98 /* XCRemoteSwiftPackageReference "TAKUUID" */,
+				B1BA2ABF299E7EF300559A4D /* XCRemoteSwiftPackageReference "RxSwift" */,
+				B1B747BE299F27C8000C982B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = B1B889272998DC8B007EA100 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +261,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B889512998E2A1007EA100 /* NanumGothicBold.otf in Resources */,
+				B1B889522998E2A1007EA100 /* NanumGothicLight.otf in Resources */,
+				B1B889502998E2A1007EA100 /* NanumGothic.otf in Resources */,
 				B1B889362998DC8D007EA100 /* LaunchScreen.storyboard in Resources */,
 				B1B889332998DC8D007EA100 /* Assets.xcassets in Resources */,
-				B1B889312998DC8B007EA100 /* Main.storyboard in Resources */,
+				B1B889532998E2A1007EA100 /* NanumGothicExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +277,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B8892E2998DC8B007EA100 /* ViewController.swift in Sources */,
+				B1B70A3C29A2825200E18524 /* OtherChatViewCell.swift in Sources */,
+				B1BA2AC9299E96A500559A4D /* OpenChatViewController.swift in Sources */,
 				B1B8892A2998DC8B007EA100 /* AppDelegate.swift in Sources */,
+				B1BA2ABE299E582B00559A4D /* UIButton+.swift in Sources */,
+				B1B889472998E196007EA100 /* OnboardingViewModel.swift in Sources */,
+				B1BA2ABA299DF4DD00559A4D /* ChatAPI.swift in Sources */,
+				B1B889452998E185007EA100 /* OnboardingModel.swift in Sources */,
+				B1B8895529990B27007EA100 /* UITextField.swift in Sources */,
+				B1B889432998E16B007EA100 /* OnboardingViewCell.swift in Sources */,
+				B1BA2ABC299E30F300559A4D /* UserResponseModel.swift in Sources */,
+				B1BA2AB8299DEBBA00559A4D /* UUID+.swift in Sources */,
 				B1B8892C2998DC8B007EA100 /* SceneDelegate.swift in Sources */,
+				B1B70A3A29A2824A00E18524 /* MyChatViewCell.swift in Sources */,
+				B1BA2ACD299EBD4900559A4D /* Date+.swift in Sources */,
+				B1B889412998E0F8007EA100 /* OnboardingViewController.swift in Sources */,
+				B1BA2AB6299DE44500559A4D /* API+.swift in Sources */,
+				B1BA2ACB299EA4FD00559A4D /* ChannelResponseModel.swift in Sources */,
+				B1B8894A2998E1DA007EA100 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B1B8892F2998DC8B007EA100 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B1B889302998DC8B007EA100 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B1B889342998DC8D007EA100 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,9 +428,11 @@
 		};
 		B1B8893B2998DC8D007EA100 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1BA2AB4299DE3F900559A4D /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MannerChat/MannerChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N4G34Z5GTF;
@@ -292,7 +440,6 @@
 				INFOPLIST_FILE = MannerChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,9 +457,11 @@
 		};
 		B1B8893C2998DC8D007EA100 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1BA2AB4299DE3F900559A4D /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MannerChat/MannerChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N4G34Z5GTF;
@@ -320,7 +469,6 @@
 				INFOPLIST_FILE = MannerChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +506,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1B747BE299F27C8000C982B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B1B8893D2998DCAF007EA100 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendbird/sendbird-uikit-ios-spm";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B1BA2ABF299E7EF300559A4D /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		B1BFD330299D607000CA9B98 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B1BFD333299D619D00CA9B98 /* XCRemoteSwiftPackageReference "TAKUUID" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/taka0125/TAKUUID.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1B747BF299F27C8000C982B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1B747BE299F27C8000C982B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B1B8893E2998DCAF007EA100 /* SendbirdUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1B8893D2998DCAF007EA100 /* XCRemoteSwiftPackageReference "sendbird-uikit-ios-spm" */;
+			productName = SendbirdUIKit;
+		};
+		B1BA2AC0299E7EF300559A4D /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1BA2ABF299E7EF300559A4D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		B1BA2AC2299E7EF300559A4D /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1BA2ABF299E7EF300559A4D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		B1BA2AC4299E7EF300559A4D /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1BA2ABF299E7EF300559A4D /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		B1BFD331299D607000CA9B98 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1BFD330299D607000CA9B98 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		B1BFD334299D619D00CA9B98 /* TAKUUID */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1BFD333299D619D00CA9B98 /* XCRemoteSwiftPackageReference "TAKUUID" */;
+			productName = TAKUUID;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B1B8891E2998DC8B007EA100 /* Project object */;
 }

@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import SendbirdChatSDK
+import TAKUUID
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let appId = Bundle.main.SEND_BIRD_APP_ID
+        let initParams = InitParams(
+            applicationId: appId
+        )
+
+        SendbirdChat.initialize(params: initParams, completionHandler:  { error in
+            print(error)
+        })
+
+        /// User.id가 저장 될 UUID 키체인에 접근 - 사용은 사용할 곳에서 직접 키체인에 접근
+        TAKUUIDStorage.sharedInstance().migrate()
+
         return true
     }
 
