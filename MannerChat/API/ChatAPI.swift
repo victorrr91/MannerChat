@@ -13,10 +13,10 @@ enum ChatAPI {
 
     static let version = "/v3"
     static let baseURL = "https://api-" + Bundle.main.SEND_BIRD_APP_ID + ".sendbird.com" + version
-    static let userId = (TAKUUIDStorage.uuid ?? "") + "2"
+    static let userId = TAKUUIDStorage.uuid
 
     static func checkExistUser(completion: @escaping (Result<User, ApiError>) -> Void) {
-//        guard let userId = userId else { return }
+        guard let userId = userId else { return }
         guard let url = URL(string: baseURL + "/users" + "/\(userId)") else { return }
 
         let headers: HTTPHeaders = [
@@ -45,7 +45,7 @@ enum ChatAPI {
 
     static func createUser(nickname: String, completion: @escaping (Result<User, ApiError>) -> Void) {
         guard let url = URL(string: baseURL + "/users") else { return }
-//        guard let userId = userId else { return }
+        guard let userId = userId else { return }
 
         let headers: HTTPHeaders = [
             "Api-Token": Bundle.main.SEND_BIRD_API_TOKEN,
@@ -78,7 +78,7 @@ enum ChatAPI {
     }
 
     static func changeNickname(nickname: String, completion: @escaping (Result<User, ApiError>) -> Void) {
-//        guard let userId = userId else { return }
+        guard let userId = userId else { return }
         guard let url = URL(string: baseURL + "/users" + "/\(userId)") else { return }
 
 
@@ -119,7 +119,7 @@ enum ChatAPI {
             "Api-Token": Bundle.main.SEND_BIRD_API_TOKEN
         ]
 
-//        guard let userId = userId else { return }
+        guard let userId = userId else { return }
         let body: Parameters = [
             "channel_url": channelUrl,
             "user_id": userId,
@@ -184,7 +184,7 @@ enum ChatAPI {
             "Api-Token": Bundle.main.SEND_BIRD_API_TOKEN
         ]
 
-//        guard let userId = userId else { return }
+        guard let userId = userId else { return }
         let body: Parameters = [
             "message_type": "MESG",
             "user_id": userId,
