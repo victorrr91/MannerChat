@@ -13,8 +13,6 @@ class OnboardingViewController: UIViewController {
 
     private var OnboardingVM: OnboardingViewModel = OnboardingViewModel()
 
-    private var currentUser: User? = nil
-
     private var inputBottomConstraint : NSLayoutConstraint? = nil
 
     private let welcomeLabel: UILabel = {
@@ -59,14 +57,14 @@ class OnboardingViewController: UIViewController {
         return pageControl
     }()
 
-    private lazy var nickNameTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.font = .systemFont(ofSize: 18, weight: .semibold)
         textField.textColor = .label
 
         textField.addLeftPadding()
-        textField.placeholder = "닉네임을 입력해주세요.(영어만 가능)"
+        textField.placeholder = "이메일을 입력해주세요."
         textField.delegate = self
 
         textField.layer.borderColor = UIColor(hex: "#2358E1")?.cgColor
@@ -94,67 +92,49 @@ class OnboardingViewController: UIViewController {
     @objc
     func didTapStartButton() {
         view.endEditing(true)
-        guard let nickName = nickNameTextField.text else { return }
+        guard let nickName = emailTextField.text else { return }
 
-        if currentUser == nil {
-            ChatAPI.createUser(nickname: nickName) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let user):
-                    self.currentUser = user
-
-                case .failure(let error):
-                    print(error)
-                }
+        SendbirdChat.connect(userId: nickName) { [weak self] user, error in
+            guard let user = user, error == nil else {
+                print(error)
+                return
             }
-        }
+            print("\(user)가 입장했습니다.11")
 
-        if currentUser?.nickname != nickName {
-            ChatAPI.changeNickname(nickname: nickName) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let user):
-                    self.currentUser = user
-
-                case .failure(let error):
-                    print(error)
-                }
+            if user.nickname == "" {
+                self?.presentEnterNicknameAlert()
+            } else {
+                let openChatViewController = OpenChatViewController()
+                self?.navigationController?.pushViewController(openChatViewController, animated: true)
             }
-        }
-
-        let openChatViewController = OpenChatViewController()
-        if let currentUser {
-            openChatViewController.setCurrentUser(currentUser)
-            self.navigationController?.pushViewController(openChatViewController, animated: true)
         }
     }
 
-    private lazy var changeNicknameButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("변경", for: .normal)
-        button.titleLabel?.font = UIFont(name: "NanumGothicOTFBold", size: 13)
-        button.backgroundColor = UIColor(hex: "#2358E1")
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 4
-        button.clipsToBounds = true
-        button.isHidden = true
+    func presentEnterNicknameAlert() {
+        let alertController = UIAlertController(title: "닉네임 생성", message: "원하시는 닉네임을 입력해주세요.", preferredStyle: .alert)
+        let confirm = UIAlertAction(title: "생성", style: .default) { nickname in
+            guard let textField = alertController.textFields else { return }
+            let nickname = textField[0].text
 
-        button.addTarget(self, action: #selector(didTapChangeNicknameButton), for: .touchUpInside)
-        return button
-    }()
+            let params = UserUpdateParams()
+            params.nickname = nickname
 
-    @objc
-    func didTapChangeNicknameButton() {
-        resetNicknameTextField()
-    }
+            SendbirdChat.updateCurrentUserInfo(params: params) { [weak self] error in
+                guard error == nil else {
+                    return
+                }
+                let openChatViewController = OpenChatViewController()
+                self?.navigationController?.pushViewController(openChatViewController, animated: true)
+            }
+        }
 
-    private func resetNicknameTextField() {
-        changeNicknameButton.isHidden = true
-        self.nickNameTextField.text = nil
-        self.nickNameTextField.backgroundColor = .systemBackground
-        self.nickNameTextField.isEnabled = true
-        self.nickNameTextField.becomeFirstResponder()
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+
+        alertController.addTextField()
+        alertController.addAction(confirm)
+        alertController.addAction(cancel)
+
+        self.present(alertController, animated: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -168,31 +148,14 @@ class OnboardingViewController: UIViewController {
 
         setupViews()
 
-        ChatAPI.checkExistUser { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let user):
-                self.currentUserExist(user)
-
-            case .failure(let error):
-                print(error)
-                self.startButton.isEnabled = false
-            }
-        }
+        SendbirdChat.addConnectionDelegate(self, identifier: "connect_delegate")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         removeKeyboardObserver()
-    }
-
-    private func currentUserExist(_ user: User) {
-        self.currentUser = user
-        self.nickNameTextField.text = user.nickname
-        self.nickNameTextField.isEnabled = false
-        self.nickNameTextField.backgroundColor = .systemGray5
-        self.changeNicknameButton.isHidden = false
+        SendbirdChat.disconnect()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -202,8 +165,7 @@ class OnboardingViewController: UIViewController {
     private func setupViews() {
         view.addSubview(collectionView)
         view.addSubview(pageControl)
-        view.addSubview(nickNameTextField)
-        view.addSubview(changeNicknameButton)
+        view.addSubview(emailTextField)
         view.addSubview(startButton)
 
         inputBottomConstraint = startButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
@@ -218,18 +180,13 @@ class OnboardingViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -8),
 
-            pageControl.bottomAnchor.constraint(equalTo: nickNameTextField.topAnchor, constant: -56),
+            pageControl.bottomAnchor.constraint(equalTo: emailTextField.topAnchor, constant: -56),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            nickNameTextField.bottomAnchor.constraint(equalTo: startButton.topAnchor, constant: -24),
-            nickNameTextField.leadingAnchor.constraint(equalTo: startButton.leadingAnchor),
-            nickNameTextField.trailingAnchor.constraint(equalTo: startButton.trailingAnchor),
-            nickNameTextField.heightAnchor.constraint(equalToConstant: 48),
-
-            changeNicknameButton.centerYAnchor.constraint(equalTo: nickNameTextField.centerYAnchor),
-            changeNicknameButton.trailingAnchor.constraint(equalTo: nickNameTextField.trailingAnchor, constant: -18),
-            changeNicknameButton.widthAnchor.constraint(equalToConstant: 40),
-            changeNicknameButton.heightAnchor.constraint(equalToConstant: 30),
+            emailTextField.bottomAnchor.constraint(equalTo: startButton.topAnchor, constant: -24),
+            emailTextField.leadingAnchor.constraint(equalTo: startButton.leadingAnchor),
+            emailTextField.trailingAnchor.constraint(equalTo: startButton.trailingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: 48),
 
             startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -329,5 +286,15 @@ private extension OnboardingViewController {
             self.inputBottomConstraint?.constant = -24
             self.view.layoutIfNeeded()
         }
+    }
+}
+
+extension OnboardingViewController: ConnectionDelegate, BaseChannelDelegate {
+    func didConnect(userId: String) {
+        print("\(userId)가 입장했습니다.")
+    }
+
+    func didDisconnect(userId: String) {
+        print("\(userId)의 연결이 종료됐습니다.")
     }
 }

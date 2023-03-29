@@ -41,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B108C16329D4A6CD00F5EABE /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
 		B1B70A3929A2824A00E18524 /* MyChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatViewCell.swift; sourceTree = "<group>"; };
 		B1B70A3B29A2825200E18524 /* OtherChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatViewCell.swift; sourceTree = "<group>"; };
 		B1B889262998DC8B007EA100 /* MannerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MannerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +61,6 @@
 		B1B8894F2998E2A1007EA100 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicExtraBold.otf; sourceTree = "<group>"; };
 		B1B8895429990B27007EA100 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		B1BA2AB3299DDE7B00559A4D /* MannerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MannerChat.entitlements; sourceTree = "<group>"; };
-		B1BA2AB4299DE3F900559A4D /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
 		B1BA2AB5299DE44500559A4D /* API+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+.swift"; sourceTree = "<group>"; };
 		B1BA2AB7299DEBBA00559A4D /* UUID+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UUID+.swift"; sourceTree = "<group>"; };
 		B1BA2AB9299DF4DD00559A4D /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				B1B889482998E1CA007EA100 /* Extensions */,
 				B1B8894B2998E28C007EA100 /* Fonts */,
 				B1B889322998DC8D007EA100 /* Assets.xcassets */,
-				B1BA2AB4299DE3F900559A4D /* env.xcconfig */,
+				B108C16329D4A6CD00F5EABE /* env.xcconfig */,
 				B1B889342998DC8D007EA100 /* LaunchScreen.storyboard */,
 				B1B889372998DC8D007EA100 /* Info.plist */,
 			);
@@ -428,7 +428,7 @@
 		};
 		B1B8893B2998DC8D007EA100 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1BA2AB4299DE3F900559A4D /* env.xcconfig */;
+			baseConfigurationReference = B108C16329D4A6CD00F5EABE /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -457,7 +457,7 @@
 		};
 		B1B8893C2998DC8D007EA100 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1BA2AB4299DE3F900559A4D /* env.xcconfig */;
+			baseConfigurationReference = B108C16329D4A6CD00F5EABE /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

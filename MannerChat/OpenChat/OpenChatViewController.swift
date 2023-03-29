@@ -10,15 +10,9 @@ import SendbirdChatSDK
 
 class OpenChatViewController: UIViewController {
 
-    private var currentUser: User? = nil
     private var channel: Channel? = nil
-    private var messages: [Message] = []
 
     private var inputBottomConstraint : NSLayoutConstraint? = nil
-
-    func setCurrentUser(_ user: User) {
-        currentUser = user
-    }
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -76,18 +70,9 @@ class OpenChatViewController: UIViewController {
 
     @objc
     private func didTapSendButton() {
-        ChatAPI.sendMessage(message: messageInput.text) { [weak self] result in
-            switch result {
-            case .success(let code):
-                if code == "success" {
-                    self?.fetchMessages()
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
         self.messageInput.text = ""
         self.sendButton.isEnabled = false
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -99,9 +84,6 @@ class OpenChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        joinOpenChat()
-        fetchMessages()
-
         setupViews()
 
         SendbirdChat.addChannelDelegate(self as BaseChannelDelegate, identifier: "aa")
@@ -109,6 +91,7 @@ class OpenChatViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         removeKeyboardObserver()
+        SendbirdChat.disconnect()
     }
 
     private func setupViews() {
@@ -141,34 +124,11 @@ class OpenChatViewController: UIViewController {
 extension OpenChatViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if !messages.isEmpty {
-            let message = messages[indexPath.row]
-            let senderId = message.user?.userID
 
-            if senderId == currentUser?.userID {
-                guard let myCell = tableView.dequeueReusableCell(
-                    withIdentifier: MyChatViewCell.identifier,
-                    for: indexPath
-                ) as? MyChatViewCell else { return UITableViewCell() }
-
-                myCell.configurationCell(message)
-
-                return myCell
-            } else {
-                guard let otherCell = tableView.dequeueReusableCell(
-                    withIdentifier: OtherChatViewCell.identifier,
-                    for: indexPath
-                ) as? OtherChatViewCell else { return UITableViewCell() }
-
-                otherCell.configurationCell(message)
-
-                return otherCell
-            }
-        }
         return UITableViewCell()
     }
 }
@@ -192,48 +152,6 @@ extension OpenChatViewController: GroupChannelDelegate {
             print(message)
         }
     }
-}
-
-//Network
-private extension OpenChatViewController {
-
-    func joinOpenChat() {
-        ChatAPI.joinChannel { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let channel):
-                self.channel = channel
-                DispatchQueue.main.async {
-                    if let title = channel.name,
-                       let memberCount = channel.memberCount {
-                        self.title = title + " (\(memberCount))"
-                    }
-                }
-
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-    func fetchMessages() {
-        ChatAPI.fetchMessages { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let messages):
-                self.messages = messages.messages ?? []
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-                }
-
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
 }
 
 private extension OpenChatViewController {
@@ -290,8 +208,8 @@ private extension OpenChatViewController {
                 self.view.layoutIfNeeded()
             } completion: { _ in }
 
-            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+//            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+//            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
 
